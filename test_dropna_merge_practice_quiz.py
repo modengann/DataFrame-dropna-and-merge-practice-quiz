@@ -25,7 +25,6 @@ class TestDataProcessing(unittest.TestCase):
 
     def test_drop_all_missing(self):
         result = quiz_script.drop_all_missing(self.df_with_missing)
-        # Manually create expected DataFrame
         expected = pd.DataFrame({
             'Name': ['Anna', 'Brad', 'Diana'],
             'Age': ['28', None, '23'],
@@ -35,7 +34,6 @@ class TestDataProcessing(unittest.TestCase):
 
     def test_drop_any_missing(self):
         result = quiz_script.drop_any_missing(self.df_with_missing)
-        # Manually create expected DataFrame
         expected = pd.DataFrame({
             'Name': 'Diana',
             'Age': '23',
@@ -45,13 +43,11 @@ class TestDataProcessing(unittest.TestCase):
 
     def test_find_salary_sum(self):
         result = quiz_script.find_salary_sum(self.df_left)
-        # Manually calculate the expected sum
         expected = 258000
         self.assertEqual(result, expected)
 
     def test_merge_dataframes(self):
         result = quiz_script.merge_dataframes(self.df_left, self.df_right)
-        # Manually create expected DataFrame
         expected = pd.DataFrame({
             'Name': ['Anna', 'Brad', 'Charlie', 'Diana'],
             'Age': ['28', '35', '23', '31'],
