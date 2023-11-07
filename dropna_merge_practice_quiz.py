@@ -26,8 +26,6 @@ def main():
     salary_data = pd.read_csv("hr_demographic_data.csv")
     job_description = pd.read_csv("hr_job_description.csv")
 
-
-
     print(f"The total spent on salaries is {find_salary_sum(salary_data)}")
     merged_data = merge_dataframes(salary_data, job_description)
     only_complete_data = drop_any_missing(merged_data)
